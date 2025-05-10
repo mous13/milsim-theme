@@ -1,0 +1,33 @@
+{% extends '@!Forumify/frontend/blocks/header/header.html.twig' %}
+{% block header %}
+    <div class="header_logo">
+    <div class="header_logo_content">
+        {% block header_logo %}
+            <a href="{{ path('forumify_core_index') }}" class="header-logo">
+                <img src="{{ logo }}" alt="logo">
+                <span class=" header_title ml-2">{{ setting('forumify.title') }}</span>
+            </a>
+        {% endblock %}
+    </div>
+    </div>
+    <header class="header">
+        <div class="header_body responsive flex">
+            {% block header_navigtion %}
+                <div class="flex flex-grow justify-end items-center">
+                    {% include '@Forumify/frontend/blocks/header/menu_large.html.twig' %}
+                    {% include '@Forumify/frontend/blocks/header/menu_mobile.html.twig' %}
+                    {% if app.user is not null %}
+                        {{ component('Notifications') }}
+                    {% endif %}
+                    <a
+                            class="btn-link btn-icon hide-phone"
+                            href="{{ path('forumify_core_theme_toggle', { '_target_path': app.request.requestUri }) }}"
+                            {{ stimulus_controller('forumify/forumify-platform/theme') }}
+                    >
+                        <i class="ph ph-circle-half-tilt"></i>
+                    </a>
+                </div>
+            {% endblock %}
+        </div>
+    </header>
+{% endblock %}

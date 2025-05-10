@@ -1,0 +1,19 @@
+{
+  "name": "citadel/darkmilsim-theme",
+  "description": "Dark Milsim theme for Forumify",
+  "type": "forumify-theme",
+  "keywords": ["symfony-ux"],
+  "authors": [
+    {
+      "name": "Citadel Software Solutions"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Citadel\\DarkMilsimTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "forumify-plugin-class": "Citadel\\DarkMilsimTheme\\CitadelDarkMilsimTheme"
+  }
+}

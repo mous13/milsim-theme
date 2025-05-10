@@ -1,0 +1,77 @@
+{% extends '@!Forumify/frontend/forum/forum_group.html.twig' %}
+{% block forum_group %}
+    {% set visibleForums = forums|filter(forum => can('view', forum)) %}
+    {% if visibleForums is not empty %}
+        <div class="card">
+            {% if title is defined %}
+                <div class="card-title">
+                    <h4 class="text-subtitle mb-0">{{ title }}</h4>
+                </div>
+            {% endif %}
+            <ul>
+                {% for forum in visibleForums %}
+                    {% set link = path('forumify_forum_forum', { slug: forum.slug }) %}
+                    <li class="p-4 grid-4">
+                        <div class="col-xs-4 col-md-3">
+                            <div class="flex items-center gap-1">
+                                <h3 class="mb-0">
+                                    <div class="forum_button">
+                                        <i class="ph ph-list"></i>
+                                    </div>
+                                    <a href="{{ link }}">
+                                        {{ forum.title }}
+                                    </a>
+                                </h3>
+                                {{ component('ReadMarker', { item: forum }) }}
+                            </div>
+                            <div>
+                                {% block forum_content %}
+                                    {{ forum.content|rich }}
+                                {% endblock %}
+                                {% block forum_subforums %}
+                                    <div class="forum-subforums">
+                                        {% for subforum in forum.children|filter(subforum => can('view', subforum)) %}
+                                            <div class="inline-flex items-baseline gap-1">
+                                                <a href="{{ path('forumify_forum_forum', { slug: subforum.slug }) }}">
+                                                    <i class="ph ph-arrow-bend-down-right"></i>
+                                                    {{ subforum.title }}
+                                                </a>
+                                                {{ component('ReadMarker', { item: subforum }) }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        </div>
+                        {% set lastComment = forum|last_comment %}
+                        {% if lastComment is not null %}
+                            {% set topic = lastComment.topic %}
+                            <div class="flex gap-1 hide-phone col-1">
+                                {% include '@Forumify/components/avatar.html.twig' with {
+                                    user: lastComment.createdBy
+                                } only %}
+                                <div class="flex flex-col">
+                                    <a href="{{ path('forumify_forum_topic', { slug: topic.slug }) }}">
+                                        {{ topic.title }}
+                                    </a>
+                                    <span>
+                                    {% set author %}
+                                        {% include '@Forumify/components/username.html.twig' with { user: lastComment.createdBy } only %}
+                                    {% endset %}
+                                        {{ 'created_by'|trans({ author: author })|raw }}
+                                </span>
+                                    <span class="text-small">
+                                    {{ lastComment.createdAt|format_date }}
+                                </span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </li>
+                    {% if not loop.last %}
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
