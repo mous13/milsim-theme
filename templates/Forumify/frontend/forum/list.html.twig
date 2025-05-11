@@ -1,14 +1,39 @@
-{% extends '@!Forumify/frontend/forum/list.html.twig' %}
+{% extends '@!Forumify/frontend/forum/list.html.twig'  %}
 {% block body %}
     {{ component('Breadcrumbs', { entity: forum }) }}
-    {% if forum is not null %}
-        <div class="mb-4">
-            <h1 class="mb-0">{{ forum.title }}</h1>
+    <div class="card">
+        {% if forum is not null %}
+            <div class="card-title">
+                <div class="flex flex-col">
+                    <h1 class="mb-0">{{ forum.title }}</h1>
+                </div>
+                {% if forum is not null %}
+                    <div class="flex justify-end gap-2 flex-wrap">
+                        {{ component('SubscribeButton', {
+                            entityId: forum.id,
+                            subscriptionType: constant('Forumify\\Forum\\Notification\\TopicCreatedNotificationType::TYPE')
+                        }) }}
+                        {% if can('create_topic', forum) %}
+                            <a class="btn-primary" href="{{ path('forumify_forum_topic_create', { id: forum.id }) }}">
+                                <i class="ph ph-chats"></i>
+                                {{ 'create_topic'|trans }}
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
             {% if forum.content|striptags %}
-                {{ forum.content|rich }}
+                <div class="card-body">
+                    {{ forum.content|rich }}
+                </div>
             {% endif %}
-        </div>
+        {% endif %}
+    {% if forum is not null %}
+        {% if forum.topics is not empty %}
+            {{ component('TopicList', { forum: forum }) }}
+        {% endif %}
     {% endif %}
+    </div>
     {% if groups is not empty or ungroupedForums is not empty %}
         <div class="forum-list">
             {% for group in groups %}
@@ -25,22 +50,5 @@
                 } %}
             {% endif %}
         </div>
-    {% endif %}
-    {% if forum is not null %}
-        <div class="flex justify-end gap-2 mt-6 mb-4 flex-wrap">
-            {{ component('SubscribeButton', {
-                entityId: forum.id,
-                subscriptionType: constant('Forumify\\Forum\\Notification\\TopicCreatedNotificationType::TYPE')
-            }) }}
-            {% if can('create_topic', forum) %}
-                <a class="btn-primary" href="{{ path('forumify_forum_topic_create', { id: forum.id }) }}">
-                    <i class="ph ph-chats"></i>
-                    {{ 'create_topic'|trans }}
-                </a>
-            {% endif %}
-        </div>
-        {% if forum.topics is not empty %}
-            {{ component('TopicList', { forum: forum }) }}
-        {% endif %}
     {% endif %}
 {% endblock %}

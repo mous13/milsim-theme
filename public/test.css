@@ -6,6 +6,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color:#0D1114;
+  color:var(--c-text-primary);
 }
 .header_logo {
   background-image:url('https://127.0.0.1:8000/storage/resources/header-bg6-681f867c6ca69.png');
@@ -31,14 +32,16 @@ body {
 }
 
 :root {
-  --c-text-primary: #DEDACE;
-  --c-primary: #DEDACE;
+  --c-primary: #6f7059;
+  --c-text-primary: #ececec;
+  --c-primary-accent: #494a3b;
   --c-elevation-0: #0D1114;
   --c-elevation-1: #13171A;
   --c-elevation-2: #161D23;
   --c-elevation-3: #1B242A;
   --c-elevation-4: #202A31;
   --c-elevation-5: #253038;
+  --border-color: rgba(93, 94, 75, 0.3);
 }
 
 .header_logo img {
@@ -56,11 +59,11 @@ body {
   font-size:25px;
   font-weight:200;
   background-color:#13171A;
+  border-radius:0;
 }
 
 .test .btn-primary:hover{
-  border-bottom:1px solid #DEDACE;
-  border-radius:0;
+  background-color:#0D1114;
 }
 .forum > .btn-primary i {
   margin-right:0;
@@ -85,5 +88,4 @@ body {
 .box {
   background-color:#13171A;
   box-shadow: 0px 3px 4px -2px rgba(0, 0, 0, .3), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-
 }

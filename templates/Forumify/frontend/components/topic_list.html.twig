@@ -1,0 +1,77 @@
+{% extends '@Forumify/components/list.html.twig' with { class: '' } %}
+{% block container %}
+<div class="">
+    <ul>
+        {% for topic in this.result.data %}
+            <li class="flex flex-col topic-row justify-between{% if topic.hidden %} topic-hidden{% endif %}{% if not loop.last %} border-b{% endif %}">
+                <a class="topic-link" href="{{ path('forumify_forum_topic', { slug: topic.slug }) }}"></a>
+                <div class="flex gap-4">
+                    {% if topic.forum.type == 'support' %}
+                        <div class="flex justify-center items-center">
+                            {% if topic.answer is null %}
+                                <i class="ph ph-question alert-info p-2 rounded text-huge"></i>
+                            {% else %}
+                                <i class="ph ph-check-circle alert-success p-2 rounded text-huge"></i>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="flex-grow">
+                        <h4 class="mb-0 flex flex-row items-center gap-1 text-subtitle">
+                            {% if topic.pinned %}<i class="ph ph-push-pin"></i>{% endif %}
+                            {% if topic.locked %}<i class="ph ph-lock"></i>{% endif %}
+                            {% if topic.hidden %}<i class="ph ph-eye-slash"></i>{% endif %}
+                            {{ topic.title }}
+                            {{ component('ReadMarker', { item: topic }) }}
+                        </h4>
+                        {% if forum.displaySettings.showTopicAuthor %}
+                            <div class="flex items-center gap-2 text-small">
+                                {% include '@Forumify/components/avatar.html.twig' with { user: topic.createdBy, className: 'avatar-xs' } only %}
+                                <span class="flex items-baseline gap-2">
+                                    {% include '@Forumify/components/username.html.twig' with { user: topic.createdBy, className: 'topic-author' } only %}
+                                    {{ topic.createdAt|format_date }}
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% set lastComment = topic|last_comment %}
+                    {% if lastComment is not null %}
+                        <div class="flex flex-col w-25 hide-phone hide-tablet">
+                            <p class="text-small mb-1">{{ 'forum.topic.last_comment_by'|trans }}</p>
+                            <div class="flex gap-2">
+                                {% include '@Forumify/components/avatar.html.twig' with { user: lastComment.createdBy, className: 'avatar-sm' } only %}
+                                <div>
+                                    {% include '@Forumify/components/username.html.twig' with { user: lastComment.createdBy, className: 'topic-author' } only %}
+                                    <p class="text-small">{{ lastComment.createdAt|format_date }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if forum.displaySettings.showTopicPreview %}
+                    {% if topic.forum.type == 'image' or (topic.forum.type == 'mixed' and topic.image) %}
+                        {% set image = topic.image
+                            ? asset(topic.image, 'forumify.media')
+                            : (setting('forumify.logo') ? asset(setting('forumify.logo'), 'forumify.asset') : asset('bundles/forumify/images/forumify.svg')) %}
+                        <div>
+                            <img class="topic-list-image" src="{{ image }}" alt="">
+                        </div>
+                    {% elseif topic.firstComment %}
+                        <div class="topic-content">
+                            {{ topic.firstComment.content|striptags('<br><p>')|u.truncate(600, '...', false)|raw }}
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if forum.displaySettings.showTopicStatistics %}
+                    <div class="flex gap-4 pl-1 text-small">
+                        <span>{{ max(0, topic.comments.count - 1)|short_number }} <i class="ph ph-arrow-bend-up-left"></i></span>
+                        <span>{{ topic.views|short_number }} <i class="ph ph-eye"></i></span>
+                        {% if topic.firstComment %}
+                            <span>{{ topic.firstComment.reactions.count|short_number }} <i class="ph ph-sparkle"></i></span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

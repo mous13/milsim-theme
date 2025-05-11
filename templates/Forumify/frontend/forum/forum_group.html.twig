@@ -1,6 +1,12 @@
 {% extends '@!Forumify/frontend/forum/forum_group.html.twig' %}
 {% block forum_group %}
     {% set visibleForums = forums|filter(forum => can('view', forum)) %}
+    {% set icons = {
+        'text'    : 'ph-text-align-justify',
+        'image'   : 'ph-image',
+        'mixed'   : 'ph-subtract-squar',
+        'support' : 'ph-headset'
+    } %}
     {% if visibleForums is not empty %}
         <div class="card">
             {% if title is defined %}
@@ -10,13 +16,14 @@
             {% endif %}
             <ul>
                 {% for forum in visibleForums %}
+                    {% set iconClass = icons[forum.type]|default('ph-question') %}
                     {% set link = path('forumify_forum_forum', { slug: forum.slug }) %}
                     <li class="p-4 grid-4">
                         <div class="col-xs-4 col-md-3">
                             <div class="flex items-center gap-1">
                                 <h3 class="mb-0">
                                     <div class="forum_button">
-                                        <i class="ph ph-list"></i>
+                                        <i class="ph {{ iconClass }}"></i>
                                     </div>
                                     <a href="{{ link }}">
                                         {{ forum.title }}
