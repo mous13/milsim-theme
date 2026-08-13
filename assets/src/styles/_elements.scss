@@ -94,6 +94,20 @@ textarea:focus-visible,
     border-bottom: var(--ms-hairline) solid var(--c-border);
 }
 
+.card-title h1,
+.card-title h2,
+.card-title h3,
+.card-title h4,
+.card-title h5,
+.card-title h6,
+.card-title a {
+    color: inherit;
+    border-bottom: none;
+    padding-bottom: 0;
+    font-family: inherit;
+    letter-spacing: inherit;
+}
+
 .alert-success,
 .alert-info,
 .alert-warning,
