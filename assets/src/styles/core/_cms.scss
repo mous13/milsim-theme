@@ -1,0 +1,103 @@
+.ms-hero {
+    position: relative;
+    background-color: var(--c-header-bg);
+    background-size: cover;
+    background-position: center;
+    color: var(--c-primary-text);
+    padding: var(--spacing-12) var(--spacing-6);
+    border-bottom: var(--ms-header-rule) solid var(--c-accent);
+}
+
+.ms-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(30, 35, 24, 0.72);
+}
+
+.ms-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ms-hero__kicker {
+    display: inline-block;
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--c-accent);
+    color: var(--c-primary-text);
+    padding: 3px 10px;
+}
+
+.ms-hero__title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: var(--c-primary-text);
+    margin: var(--spacing-4) 0 var(--spacing-2);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.ms-hero__subtitle {
+    font-size: 1.0625rem;
+    max-width: 60ch;
+    color: var(--c-primary-text);
+    opacity: 0.85;
+}
+
+.ms-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-6);
+}
+
+.ms-hero .btn-outlined {
+    border-color: var(--c-primary-text);
+    color: var(--c-primary-text);
+}
+
+.ms-hero .btn-outlined:hover:not([disabled]):not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--c-primary-text);
+    color: var(--c-primary-text);
+}
+
+.ms-stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    border: var(--ms-hairline) solid var(--c-border);
+    background-color: var(--c-elevation-1);
+}
+
+.ms-stat {
+    padding: var(--spacing-4);
+    border-right: var(--ms-hairline) solid var(--c-border);
+}
+
+.ms-stat:last-child {
+    border-right: none;
+}
+
+.ms-stat__value {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--c-text-primary);
+}
+
+.ms-stat__label {
+    font-family: var(--ms-data-font);
+    font-size: 0.6rem;
+    letter-spacing: var(--ms-track-label);
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+    margin-top: var(--spacing-2);
+}

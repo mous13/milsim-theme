@@ -1,0 +1,60 @@
+.comment {
+    border: var(--ms-hairline) solid var(--c-border);
+    border-radius: 0;
+    background-color: var(--c-elevation-1);
+}
+
+.comment.answer {
+    border-left: var(--ms-bar-width) solid var(--c-success-text);
+}
+
+.comment.selected {
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.comment-author {
+    background-color: var(--c-elevation-2);
+    border-right: var(--ms-hairline) solid var(--c-border);
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+}
+
+.comment-author .avatar,
+.comment-author .avatar-sm {
+    border-radius: 0;
+}
+
+.ms-service-strip {
+    font-family: var(--ms-data-font);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+    color: var(--c-text-secondary);
+    text-transform: uppercase;
+    margin-top: var(--spacing-3);
+    padding-top: var(--spacing-2);
+    border-top: var(--ms-hairline) solid var(--c-border);
+}
+
+.ms-service-strip dt {
+    display: inline;
+}
+
+.ms-service-strip dd {
+    display: inline;
+    margin: 0;
+    color: var(--c-text-primary);
+    font-weight: 500;
+}
+
+.ms-post-date {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}
+
+.comment-content .rich-text {
+    padding-top: var(--spacing-2);
+}

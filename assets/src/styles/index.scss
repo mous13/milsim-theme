@@ -3,3 +3,10 @@
 @use 'elements';
 @use 'forms';
 @use 'tables';
+@use 'core/layout';
+@use 'core/header';
+@use 'core/forum';
+@use 'core/comments';
+@use 'core/profile';
+@use 'core/cms';
+@use 'core/auth';

@@ -1,0 +1,22 @@
+.profile-header {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-top: var(--ms-rule-weight) solid var(--c-accent);
+    border-radius: 0;
+}
+
+.profile-header .avatar,
+.profile-preview .avatar {
+    border-radius: 0;
+}
+
+.profile-header h1,
+.profile-header h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.profile-preview {
+    border-radius: 0;
+    border: var(--ms-hairline) solid var(--c-border);
+}

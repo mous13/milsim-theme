@@ -1,0 +1,25 @@
+{% extends '@!Forumify/frontend/components/comment_list_comment.html.twig' %}
+
+{% block comment_list_comment_author %}
+    {{ parent() }}
+    {% if item.createdBy is not null %}
+        <dl class="ms-service-strip hide-phone">
+            <div><dt>Joined</dt> <dd>{{ item.createdBy.createdAt|format_date('medium') }}</dd></div>
+        </dl>
+    {% endif %}
+{% endblock %}
+
+{% block comment_list_comment_content_created_at %}
+    <span class="mb-2 flex flex-col ms-post-date">
+        {{ item.createdAt|format_date }}
+        {% if item.updatedAt != item.createdAt and item.updatedBy is not null %}
+            {% set editor = item.updatedBy %}
+            <span class="text-light text-extra-small hide-phone">
+                {{ 'comment.edited'|trans({
+                    user: editor.displayName|default(editor.username),
+                    date: item.updatedAt|format_date
+                }) }}
+            </span>
+        {% endif %}
+    </span>
+{% endblock %}

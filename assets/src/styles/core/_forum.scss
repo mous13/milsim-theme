@@ -1,0 +1,59 @@
+.forum-group,
+.forum-group-title {
+    border-radius: 0;
+}
+
+.forum-group-title,
+.card-title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 0.9375rem;
+    background-color: var(--c-header-bg);
+    color: var(--c-primary-text);
+    border-bottom: none;
+}
+
+.forum-group-title a {
+    color: var(--c-primary-text);
+}
+
+.forum {
+    border-top: var(--ms-hairline) solid var(--c-border);
+}
+
+.forum-title {
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.forum-description {
+    color: var(--c-text-secondary);
+    font-size: 0.8125rem;
+}
+
+.forum-stats,
+.topic-stats {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}
+
+.topic {
+    border-top: var(--ms-hairline) solid var(--c-border);
+}
+
+.topic-title {
+    font-weight: 600;
+}
+
+.topic.pinned {
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.topic.locked {
+    border-left: var(--ms-bar-width) solid var(--c-text-secondary);
+}

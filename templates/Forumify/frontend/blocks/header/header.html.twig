@@ -1,0 +1,11 @@
+{% extends '@!Forumify/frontend/blocks/header/header.html.twig' %}
+
+{% block header_navigtion %}
+    <div class="ms-header-nav">
+        {% include '@Forumify/frontend/blocks/header/menu_large.html.twig' %}
+        {% include '@Forumify/frontend/blocks/header/menu_mobile.html.twig' %}
+        {% if app.user is not null %}
+            {{ component('Notifications', { loading: 'defer' }) }}
+        {% endif %}
+    </div>
+{% endblock %}

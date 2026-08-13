@@ -1,13 +1,20 @@
 .btn-primary,
 .btn-cta,
 .btn-outlined,
-.btn-outlined-highlighted,
-.btn-link {
+.btn-outlined-highlighted {
     font-family: var(--ms-display-font);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: var(--ms-track-button);
     font-size: 0.8125rem;
+    border-radius: 0;
+}
+
+.btn-link {
+    font-family: var(--ms-body-font);
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: normal;
     border-radius: 0;
 }
 
