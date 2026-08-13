@@ -77,12 +77,18 @@ class CitadelMilsimTheme extends AbstractForumifyTheme
                     help: 'Used for dates, ranks, assignments and other record data.',
                 ),
                 new ThemeVar(
+                    key: 'c-on-dark',
+                    label: 'Text on Dark Surfaces',
+                    type: ThemeVarType::Color,
+                    defaultValue: '#e9e7e2',
+                    help: 'Text and icons on the header, hero and other permanently dark chrome. Stays light in both modes.',
+                ),
+                new ThemeVar(
                     key: 'c-header-hover',
                     label: 'Header Hover Colour',
                     type: ThemeVarType::String,
-                    defaultValue: 'rgba(26, 28, 24, 0.08)',
-                    defaultDarkValue: 'rgba(233, 231, 226, 0.08)',
-                    help: 'Hover wash on header navigation and buttons placed on dark surfaces.',
+                    defaultValue: 'rgba(233, 231, 226, 0.1)',
+                    help: 'Hover wash on the header and on buttons placed over dark surfaces. The header is dark in both modes, so this stays a light wash.',
                 ),
                 new ThemeVar(
                     key: 'ms-hero-overlay',

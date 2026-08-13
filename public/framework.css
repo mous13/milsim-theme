@@ -37,8 +37,7 @@
   --ms-row-pad-x: 12px;
   --ms-chip-pad: 4px 9px;
   --ms-bar-width: 4px;
-  --ms-accent-tint: color-mix(in srgb, var(--c-accent) 12%, #ffffff);
-  --ms-accent-strong: color-mix(in srgb, var(--c-accent) 82%, #000000);
+  --ms-accent-tint: color-mix(in srgb, var(--c-accent) 12%, var(--c-elevation-1));
   --ms-header-rule: 3px;
   --ms-focus-width: 2px;
   --ms-focus-offset: 2px;
@@ -561,11 +560,11 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 0.11em;
   font-size: 1.0625rem;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
 }
 
 .header .header-logo:hover {
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   text-decoration: none;
 }
 
@@ -579,12 +578,12 @@ footer p {
   font-weight: 500;
   letter-spacing: var(--ms-track-label);
   text-transform: uppercase;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
 }
 
 .header .btn-link:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: var(--c-primary-text);
+  background-color: var(--c-header-hover);
+  color: var(--c-on-dark);
 }
 
 .header .menu .btn-link {
@@ -602,7 +601,7 @@ footer p {
 
 .header a:focus-visible,
 .header button:focus-visible {
-  outline-color: var(--c-primary-text);
+  outline-color: var(--c-on-dark);
 }
 
 .ms-header-bar {
@@ -633,12 +632,12 @@ footer p {
   letter-spacing: var(--ms-track-display);
   font-size: 0.9375rem;
   background-color: var(--c-header-bg);
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   border-bottom: none;
 }
 
 .forum-group-title a {
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
 }
 
 .forum {
@@ -790,7 +789,7 @@ footer p {
   background-color: var(--c-header-bg);
   background-size: cover;
   background-position: center;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   padding: var(--spacing-12) var(--spacing-6);
   border-bottom: var(--ms-header-rule) solid var(--c-accent);
 }
@@ -799,7 +798,7 @@ footer p {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(30, 35, 24, 0.72);
+  background-color: var(--ms-hero-overlay);
 }
 
 .ms-hero > * {
@@ -814,7 +813,7 @@ footer p {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1.5px solid var(--c-accent);
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   padding: 3px 10px;
 }
 
@@ -825,7 +824,7 @@ footer p {
   letter-spacing: var(--ms-track-display);
   font-size: 2.5rem;
   line-height: 1.1;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   margin: var(--spacing-4) 0 var(--spacing-2);
   border-bottom: none;
   padding-bottom: 0;
@@ -834,7 +833,7 @@ footer p {
 .ms-hero__subtitle {
   font-size: 1.0625rem;
   max-width: 60ch;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   opacity: 0.85;
 }
 
@@ -846,14 +845,14 @@ footer p {
 }
 
 .ms-hero .btn-outlined {
-  border-color: var(--c-primary-text);
-  color: var(--c-primary-text);
+  border-color: var(--c-on-dark);
+  color: var(--c-on-dark);
 }
 
 .ms-hero .btn-outlined:hover:not([disabled]):not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--c-primary-text);
-  color: var(--c-primary-text);
+  background-color: var(--c-header-hover);
+  border-color: var(--c-on-dark);
+  color: var(--c-on-dark);
 }
 
 .ms-stat-row {
@@ -952,6 +951,8 @@ footer p {
   width: 22px;
   height: 22px;
   object-fit: contain;
+  background-color: var(--ms-insignia-plate);
+  padding: 1px;
 }
 
 .ms-roster__name {
@@ -1020,6 +1021,8 @@ footer p {
 .soldier-header img,
 .ms-soldier-header img {
   border-radius: 0;
+  background-color: var(--ms-insignia-plate);
+  padding: 2px;
 }
 
 .ms-soldier__rank {
@@ -1196,9 +1199,12 @@ footer p {
 
 .award img,
 .rank img,
-.qualification img {
+.qualification img,
+.ms-insignia-card img {
   border-radius: 0;
   object-fit: contain;
+  background-color: var(--ms-insignia-plate);
+  padding: 3px;
 }
 
 .ms-insignia-grid {
@@ -1263,7 +1269,7 @@ footer p {
 .ms-cta-banner {
   background-color: var(--c-header-bg);
   border-left: var(--ms-bar-width) solid var(--c-call-to-action);
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   padding: var(--spacing-8) var(--spacing-6);
 }
 
@@ -1273,13 +1279,13 @@ footer p {
   text-transform: uppercase;
   letter-spacing: var(--ms-track-display);
   font-size: 1.5rem;
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   border-bottom: none;
   padding-bottom: 0;
 }
 
 .ms-cta-banner__body {
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   opacity: 0.85;
   max-width: 60ch;
   margin-top: var(--spacing-2);
@@ -1308,7 +1314,7 @@ footer p {
   letter-spacing: var(--ms-track-display);
   font-size: 0.9375rem;
   background-color: var(--c-header-bg);
-  color: var(--c-primary-text);
+  color: var(--c-on-dark);
   padding: var(--spacing-2) var(--spacing-3);
 }
 

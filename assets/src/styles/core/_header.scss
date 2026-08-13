@@ -9,11 +9,11 @@
     text-transform: uppercase;
     letter-spacing: 0.11em;
     font-size: 1.0625rem;
-    color: var(--c-primary-text);
+    color: var(--c-on-dark);
 }
 
 .header .header-logo:hover {
-    color: var(--c-primary-text);
+    color: var(--c-on-dark);
     text-decoration: none;
 }
 
@@ -27,12 +27,12 @@
     font-weight: 500;
     letter-spacing: var(--ms-track-label);
     text-transform: uppercase;
-    color: var(--c-primary-text);
+    color: var(--c-on-dark);
 }
 
 .header .btn-link:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: var(--c-primary-text);
+    background-color: var(--c-header-hover);
+    color: var(--c-on-dark);
 }
 
 .header .menu .btn-link {
@@ -50,7 +50,7 @@
 
 .header a:focus-visible,
 .header button:focus-visible {
-    outline-color: var(--c-primary-text);
+    outline-color: var(--c-on-dark);
 }
 
 .ms-header-bar {

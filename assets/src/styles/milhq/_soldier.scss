@@ -17,6 +17,8 @@
 .soldier-header img,
 .ms-soldier-header img {
     border-radius: 0;
+    background-color: var(--ms-insignia-plate);
+    padding: 2px;
 }
 
 .ms-soldier__rank {

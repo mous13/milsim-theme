@@ -41,8 +41,7 @@
     --ms-row-pad-x: 12px;
     --ms-chip-pad: 4px 9px;
     --ms-bar-width: 4px;
-    --ms-accent-tint: color-mix(in srgb, var(--c-accent) 12%, #ffffff);
-    --ms-accent-strong: color-mix(in srgb, var(--c-accent) 82%, #000000);
+    --ms-accent-tint: color-mix(in srgb, var(--c-accent) 12%, var(--c-elevation-1));
     --ms-header-rule: 3px;
     --ms-focus-width: 2px;
     --ms-focus-offset: 2px;
