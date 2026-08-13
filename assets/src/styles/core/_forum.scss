@@ -46,6 +46,14 @@
     border-top: var(--ms-hairline) solid var(--c-border);
 }
 
+.topic-row {
+    padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
+}
+
+.topic-row:hover {
+    background-color: var(--c-hover);
+}
+
 .topic-title {
     font-weight: 600;
 }

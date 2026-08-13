@@ -8,6 +8,22 @@
     letter-spacing: var(--ms-track-button);
     font-size: 0.8125rem;
     border-radius: 0;
+    height: 44px;
+    box-sizing: border-box;
+}
+
+.btn-primary.btn-small,
+.btn-cta.btn-small,
+.btn-outlined.btn-small,
+.btn-outlined-highlighted.btn-small {
+    height: 32px;
+}
+
+.btn-outlined.btn-icon,
+.btn-outlined-highlighted.btn-icon,
+.btn-primary.btn-icon,
+.btn-cta.btn-icon {
+    min-width: 44px;
 }
 
 .btn-link {

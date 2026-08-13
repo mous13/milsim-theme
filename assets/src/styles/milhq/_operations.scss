@@ -39,15 +39,6 @@
     border: var(--ms-hairline) solid var(--c-border);
 }
 
-.topic-row {
-    border-top: var(--ms-hairline) solid var(--c-border);
-    padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
-}
-
-.topic-row:hover {
-    background-color: var(--c-hover);
-}
-
 .ms-mission-row {
     display: flex;
     align-items: center;

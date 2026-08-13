@@ -1,12 +1,15 @@
 {% extends '@!Forumify/frontend/components/comment_list_comment.html.twig' %}
 
 {% block comment_list_comment_author %}
-    {{ parent() }}
-    {% if item.createdBy is not null %}
-        <dl class="ms-service-strip hide-phone">
-            <div><dt>Joined</dt> <dd>{{ item.createdBy.createdAt|format_date('medium') }}</dd></div>
-        </dl>
-    {% endif %}
+    <div class="ms-author">
+        {{ parent() }}
+        {% if item.createdBy is not null %}
+            <dl class="ms-service-strip hide-phone">
+                <dt>Joined</dt>
+                <dd>{{ item.createdBy.createdAt|format_date('medium') }}</dd>
+            </dl>
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block comment_list_comment_content_created_at %}

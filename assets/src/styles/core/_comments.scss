@@ -12,11 +12,23 @@
     border-left: var(--ms-bar-width) solid var(--c-accent);
 }
 
-.comment-author {
+.ms-author {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     background-color: var(--c-elevation-2);
-    border-right: var(--ms-hairline) solid var(--c-border);
-    padding-top: var(--spacing-4);
-    padding-bottom: var(--spacing-4);
+}
+
+.ms-author .comment-author {
+    width: 100%;
+    border-right: none;
+}
+
+@media screen and (min-width: 900px) {
+    .ms-author {
+        width: calc(100% / 6);
+        border-right: var(--ms-hairline) solid var(--c-border);
+    }
 }
 
 .comment-author .avatar,
@@ -28,20 +40,22 @@
     font-family: var(--ms-data-font);
     font-size: 0.6rem;
     letter-spacing: 0.06em;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--c-text-secondary);
     text-transform: uppercase;
-    margin-top: var(--spacing-3);
+    text-align: center;
+    margin: var(--spacing-3) var(--spacing-4) var(--spacing-4);
     padding-top: var(--spacing-2);
     border-top: var(--ms-hairline) solid var(--c-border);
 }
 
 .ms-service-strip dt {
-    display: inline;
+    display: block;
+    letter-spacing: var(--ms-track-label);
 }
 
 .ms-service-strip dd {
-    display: inline;
+    display: block;
     margin: 0;
     color: var(--c-text-primary);
     font-weight: 500;

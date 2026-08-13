@@ -50,16 +50,34 @@ label {
     border-color: var(--c-border);
 }
 
+.rich-editor .ql-toolbar {
+    background-color: var(--c-elevation-2);
+}
+
 .rich-editor .ql-editor {
     font-family: var(--ms-body-font);
     line-height: 1.65;
 }
 
-button,
-[type='submit'] {
-    min-height: 44px;
+.ql-toolbar button,
+.ql-toolbar .ql-picker-label,
+.ql-toolbar .ql-picker-item {
+    min-height: 0;
+    height: auto;
+    font-family: var(--ms-body-font);
+    text-transform: none;
+    letter-spacing: normal;
 }
 
-.btn-small {
-    min-height: 32px;
+.ql-toolbar input,
+.ql-toolbar select,
+.ql-toolbar .ql-picker-label {
+    border: none;
+    background-color: transparent;
+}
+
+.ql-toolbar .ql-picker-options {
+    border: var(--ms-hairline) solid var(--c-border);
+    border-radius: 0;
+    background-color: var(--c-elevation-1);
 }
