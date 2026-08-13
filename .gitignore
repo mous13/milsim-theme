@@ -1,0 +1,7 @@
+/assets/node_modules/
+/node_modules/
+/vendor/
+/tests/.playwright/
+/tests/screenshots/
+/tests/report/
+.DS_Store
