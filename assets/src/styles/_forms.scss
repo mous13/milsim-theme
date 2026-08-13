@@ -44,9 +44,15 @@ label {
     outline-offset: var(--ms-focus-offset);
 }
 
+.rich-editor,
+.rich-editor .ql-toolbar,
+.rich-editor .ql-container,
+.rich-editor .ql-editor {
+    border-radius: 0;
+}
+
 .rich-editor .ql-toolbar,
 .rich-editor .ql-container {
-    border-radius: 0;
     border-color: var(--c-border);
 }
 
