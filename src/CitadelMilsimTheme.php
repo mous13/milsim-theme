@@ -99,14 +99,6 @@ class CitadelMilsimTheme extends AbstractForumifyTheme
                     help: 'Scrim drawn over hero background images to keep text legible.',
                 ),
                 new ThemeVar(
-                    key: 'ms-insignia-plate',
-                    label: 'Insignia Plate',
-                    type: ThemeVarType::String,
-                    defaultValue: 'transparent',
-                    defaultDarkValue: 'rgba(233, 231, 226, 0.9)',
-                    help: 'Backing plate behind rank and unit images. Set to transparent if your insignia already read well on dark.',
-                ),
-                new ThemeVar(
                     key: 'c-primary',
                     label: 'Primary Colour',
                     type: ThemeVarType::Color,
@@ -203,7 +195,7 @@ class CitadelMilsimTheme extends AbstractForumifyTheme
                     key: 'c-elevation-3',
                     label: 'Elevation 3 Colour',
                     type: ThemeVarType::Color,
-                    defaultValue: '#e0dbcb',
+                    defaultValue: '#e5e0d1',
                     defaultDarkValue: '#303338',
                 ),
                 new ThemeVar(

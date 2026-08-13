@@ -951,8 +951,6 @@ footer p {
   width: 22px;
   height: 22px;
   object-fit: contain;
-  background-color: var(--ms-insignia-plate);
-  padding: 1px;
 }
 
 .ms-roster__name {
@@ -1021,8 +1019,6 @@ footer p {
 .soldier-header img,
 .ms-soldier-header img {
   border-radius: 0;
-  background-color: var(--ms-insignia-plate);
-  padding: 2px;
 }
 
 .ms-soldier__rank {
@@ -1203,8 +1199,6 @@ footer p {
 .ms-insignia-card img {
   border-radius: 0;
   object-fit: contain;
-  background-color: var(--ms-insignia-plate);
-  padding: 3px;
 }
 
 .ms-insignia-grid {
