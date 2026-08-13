@@ -1,0 +1,65 @@
+input,
+select,
+textarea {
+    font-family: var(--ms-body-font);
+    border-radius: 0;
+    border: var(--ms-hairline) solid var(--c-border);
+    background-color: var(--c-elevation-1);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--c-primary);
+    outline: var(--ms-focus-width) solid var(--c-primary);
+    outline-offset: var(--ms-focus-offset);
+}
+
+label {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: var(--ms-track-label);
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}
+
+.form-error,
+.form-errors {
+    font-family: var(--ms-data-font);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--c-error-text);
+}
+
+.ts-control,
+.ts-dropdown {
+    border-radius: 0;
+    border-color: var(--c-border);
+    font-family: var(--ms-body-font);
+}
+
+.ts-wrapper.focus .ts-control {
+    outline: var(--ms-focus-width) solid var(--c-primary);
+    outline-offset: var(--ms-focus-offset);
+}
+
+.rich-editor .ql-toolbar,
+.rich-editor .ql-container {
+    border-radius: 0;
+    border-color: var(--c-border);
+}
+
+.rich-editor .ql-editor {
+    font-family: var(--ms-body-font);
+    line-height: 1.65;
+}
+
+button,
+[type='submit'] {
+    min-height: 44px;
+}
+
+.btn-small {
+    min-height: 32px;
+}
