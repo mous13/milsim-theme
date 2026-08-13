@@ -830,3 +830,435 @@ footer p {
 .auth .btn-primary {
   width: 100%;
 }
+
+.ms-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ms-roster {
+  padding: 0;
+}
+
+.ms-roster__table {
+  border: none;
+}
+
+.ms-roster__caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.ms-roster__col-insignia {
+  width: 44px;
+}
+
+.ms-roster__col-status {
+  width: 120px;
+  text-align: right;
+}
+
+.ms-roster__insignia {
+  text-align: center;
+  line-height: 0;
+}
+
+.ms-roster__insignia img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.ms-roster__name {
+  font-weight: 600;
+}
+
+.ms-roster__name a {
+  color: var(--c-text-primary);
+  font-weight: 600;
+}
+
+.ms-roster__name a:hover {
+  color: var(--c-primary);
+}
+
+.ms-roster__rank,
+.ms-roster__assignment {
+  font-family: var(--ms-data-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--c-text-secondary);
+  text-transform: uppercase;
+}
+
+.ms-roster__status {
+  text-align: right;
+}
+
+.ms-roster__row--supervisor {
+  box-shadow: inset var(--ms-bar-width) 0 0 var(--c-accent);
+}
+
+.ms-roster__supervisor {
+  color: var(--c-accent);
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.ms-roster .tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+}
+
+.tablist .btn-link.active {
+  border-bottom: var(--ms-rule-weight) solid var(--c-accent);
+  color: var(--c-text-primary);
+}
+
+.soldier-header,
+.ms-soldier-header {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+  border-top: var(--ms-rule-weight) solid var(--c-accent);
+  padding: var(--spacing-6);
+}
+
+.soldier-header h1,
+.soldier-header h2,
+.ms-soldier-header h1,
+.ms-soldier-header h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.soldier-header img,
+.ms-soldier-header img {
+  border-radius: 0;
+}
+
+.ms-soldier__rank {
+  font-family: var(--ms-data-font);
+  font-size: 0.7rem;
+  letter-spacing: var(--ms-track-label);
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 500;
+}
+
+.ms-soldier__meta {
+  font-family: var(--ms-data-font);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+}
+
+.assignment {
+  border-left: var(--ms-bar-width) solid var(--c-accent);
+  background-color: var(--c-elevation-1);
+  border-top: var(--ms-hairline) solid var(--c-border);
+  border-right: var(--ms-hairline) solid var(--c-border);
+  border-bottom: var(--ms-hairline) solid var(--c-border);
+}
+
+.record-table td,
+.record-table th {
+  font-family: var(--ms-body-font);
+}
+
+.record-table td:first-child,
+.record-table .record-date {
+  font-family: var(--ms-data-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--c-text-secondary);
+  white-space: nowrap;
+}
+
+.record-table img {
+  border-radius: 0;
+}
+
+.ms-record-empty {
+  font-family: var(--ms-data-font);
+  font-size: 0.7rem;
+  letter-spacing: var(--ms-track-label);
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.ms-op {
+  border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-op--past {
+  border-left-color: var(--c-border);
+}
+
+.ms-op--past .card-title {
+  background-color: var(--c-elevation-2);
+  color: var(--c-text-secondary);
+}
+
+.ms-op__meta {
+  font-family: var(--ms-data-font);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.ms-op__meta-sep {
+  color: var(--c-border);
+}
+
+.ms-op__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}
+
+.ms-op__body img {
+  border: var(--ms-hairline) solid var(--c-border);
+}
+
+.topic-row {
+  border-top: var(--ms-hairline) solid var(--c-border);
+  padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
+}
+
+.topic-row:hover {
+  background-color: var(--c-hover);
+}
+
+.ms-mission-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-mission-row__title {
+  font-family: var(--ms-display-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ms-track-display);
+  font-size: 0.9375rem;
+}
+
+.ms-mission-row__date {
+  font-family: var(--ms-data-font);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  white-space: nowrap;
+}
+
+.ms-briefing {
+  border: var(--ms-hairline) solid var(--c-border);
+  border-top: var(--ms-rule-weight) solid var(--c-accent);
+  background-color: var(--c-elevation-1);
+  padding: var(--spacing-6);
+}
+
+.course,
+.course-class {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+  border-radius: 0;
+}
+
+.course-class {
+  border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-class__window {
+  font-family: var(--ms-data-font);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+}
+
+.ms-class__slots {
+  font-family: var(--ms-data-font);
+  font-size: 0.66rem;
+  letter-spacing: var(--ms-track-label);
+  text-transform: uppercase;
+  color: var(--c-text-primary);
+  font-weight: 500;
+}
+
+.attendance-sheet td,
+.attendance-sheet th {
+  font-size: 0.8125rem;
+}
+
+.instructor-row {
+  border-top: var(--ms-hairline) solid var(--c-border);
+  padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
+}
+
+.award,
+.rank,
+.qualification {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+  border-radius: 0;
+}
+
+.award img,
+.rank img,
+.qualification img {
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.ms-insignia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.ms-insignia-card {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+  border-top: var(--ms-rule-weight) solid var(--c-accent);
+  padding: var(--spacing-4);
+  text-align: center;
+}
+
+.ms-insignia-card__name {
+  font-family: var(--ms-display-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ms-track-display);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-3);
+}
+
+.ms-insignia-card__criteria {
+  font-size: 0.8125rem;
+  color: var(--c-text-secondary);
+  margin-top: var(--spacing-2);
+}
+
+.enlist,
+.ms-enlist {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+  border-top: var(--ms-rule-weight) solid var(--c-call-to-action);
+  padding: var(--spacing-6);
+}
+
+.ms-enlist__title {
+  font-family: var(--ms-display-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ms-track-display);
+  font-size: 1.75rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ms-enlist__body {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 65ch;
+  color: var(--c-text-primary);
+}
+
+.ms-enlist .btn-cta,
+.ms-enlist__cta {
+  margin-top: var(--spacing-6);
+}
+
+.ms-cta-banner {
+  background-color: var(--c-header-bg);
+  border-left: var(--ms-bar-width) solid var(--c-call-to-action);
+  color: var(--c-primary-text);
+  padding: var(--spacing-8) var(--spacing-6);
+}
+
+.ms-cta-banner__title {
+  font-family: var(--ms-display-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ms-track-display);
+  font-size: 1.5rem;
+  color: var(--c-primary-text);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ms-cta-banner__body {
+  color: var(--c-primary-text);
+  opacity: 0.85;
+  max-width: 60ch;
+  margin-top: var(--spacing-2);
+}
+
+.operations-center .tabs,
+.opcenter .tabs {
+  border-bottom: var(--ms-rule-weight) solid var(--c-text-primary);
+}
+
+.ms-opcenter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.ms-panel {
+  background-color: var(--c-elevation-1);
+  border: var(--ms-hairline) solid var(--c-border);
+}
+
+.ms-panel__title {
+  font-family: var(--ms-display-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ms-track-display);
+  font-size: 0.9375rem;
+  background-color: var(--c-header-bg);
+  color: var(--c-primary-text);
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.ms-panel__body {
+  padding: var(--spacing-4);
+}
+
+.report-in-button,
+.mission-rsvp-button {
+  margin-top: var(--spacing-4);
+}
+
+.mission-stats {
+  font-family: var(--ms-data-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+}

@@ -1,0 +1,46 @@
+{% extends '@!ForumifyMilhqPlugin/frontend/components/operation_list.html.twig' %}
+
+{% block list %}
+    <ul>
+        {% for operation in this.result.rows %}
+            {% set isPast = operation.end is not null and operation.end < date() %}
+            <li class="card flex flex-col mb-4 ms-op{% if isPast %} ms-op--past{% endif %}{% if this.inOpCenter %} topic-row{% endif %}" style="position: relative; padding: 0">
+                {% if this.inOpCenter %}
+                    <a class="topic-link" href="{{ path('milhq_operations_view', { slug: operation.slug }) }}"></a>
+                {% endif %}
+                <div class="card-title ms-op__header">
+                    <span>{{ operation.title }}</span>
+                    <span class="ms-chip {{ isPast ? 'ms-chip--shut' : 'ms-chip--go' }}">
+                        {{ isPast ? 'Complete' : 'Active' }}
+                    </span>
+                </div>
+                <div class="card-body flex gap-4 ms-op__body">
+                    {% if operation.image is not null %}
+                        <div class="flex justify-center items-center hide-phone">
+                            <img src="{{ asset(operation.image, 'milhq.asset') }}" width="250" height="auto" alt="{{ operation.title }}">
+                        </div>
+                    {% endif %}
+                    <div>
+                        <p class="ms-op__meta">
+                            {% if operation.start %}
+                                <span>{{ operation.start|date('d M Y') }}</span>
+                                <span>{{ operation.start|date('H:i') }}Z</span>
+                            {% endif %}
+                            {% if operation.start and operation.end %}
+                                <span class="ms-op__meta-sep">&middot;</span>
+                            {% endif %}
+                            {% if operation.end %}
+                                <span>{{ 'milhq.opcenter.operations'|trans }} {{ operation.end|date('d M Y') }}</span>
+                            {% endif %}
+                        </p>
+                        <div class="rich-text">
+                            {{ operation.description|striptags|u.truncate(600, '...', false).trim|raw }}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% else %}
+            <li>{{ 'milhq.opcenter.no_operations'|trans }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

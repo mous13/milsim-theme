@@ -1,0 +1,37 @@
+.course,
+.course-class {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-radius: 0;
+}
+
+.course-class {
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-class__window {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}
+
+.ms-class__slots {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: var(--ms-track-label);
+    text-transform: uppercase;
+    color: var(--c-text-primary);
+    font-weight: 500;
+}
+
+.attendance-sheet td,
+.attendance-sheet th {
+    font-size: 0.8125rem;
+}
+
+.instructor-row {
+    border-top: var(--ms-hairline) solid var(--c-border);
+    padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
+}

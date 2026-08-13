@@ -1,0 +1,81 @@
+.ms-op {
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-op--past {
+    border-left-color: var(--c-border);
+}
+
+.ms-op--past .card-title {
+    background-color: var(--c-elevation-2);
+    color: var(--c-text-secondary);
+}
+
+.ms-op__meta {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-3);
+}
+
+.ms-op__meta-sep {
+    color: var(--c-border);
+}
+
+.ms-op__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+}
+
+.ms-op__body img {
+    border: var(--ms-hairline) solid var(--c-border);
+}
+
+.topic-row {
+    border-top: var(--ms-hairline) solid var(--c-border);
+    padding: var(--ms-row-pad-y) var(--ms-row-pad-x);
+}
+
+.topic-row:hover {
+    background-color: var(--c-hover);
+}
+
+.ms-mission-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+}
+
+.ms-mission-row__title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 0.9375rem;
+}
+
+.ms-mission-row__date {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+    white-space: nowrap;
+}
+
+.ms-briefing {
+    border: var(--ms-hairline) solid var(--c-border);
+    border-top: var(--ms-rule-weight) solid var(--c-accent);
+    background-color: var(--c-elevation-1);
+    padding: var(--spacing-6);
+}

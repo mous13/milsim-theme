@@ -1,0 +1,43 @@
+.operations-center .tabs,
+.opcenter .tabs {
+    border-bottom: var(--ms-rule-weight) solid var(--c-text-primary);
+}
+
+.ms-opcenter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-4);
+}
+
+.ms-panel {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+}
+
+.ms-panel__title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 0.9375rem;
+    background-color: var(--c-header-bg);
+    color: var(--c-primary-text);
+    padding: var(--spacing-2) var(--spacing-3);
+}
+
+.ms-panel__body {
+    padding: var(--spacing-4);
+}
+
+.report-in-button,
+.mission-rsvp-button {
+    margin-top: var(--spacing-4);
+}
+
+.mission-stats {
+    font-family: var(--ms-data-font);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}

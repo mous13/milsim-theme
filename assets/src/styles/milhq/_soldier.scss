@@ -1,0 +1,45 @@
+.soldier-header,
+.ms-soldier-header {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-top: var(--ms-rule-weight) solid var(--c-accent);
+    padding: var(--spacing-6);
+}
+
+.soldier-header h1,
+.soldier-header h2,
+.ms-soldier-header h1,
+.ms-soldier-header h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.soldier-header img,
+.ms-soldier-header img {
+    border-radius: 0;
+}
+
+.ms-soldier__rank {
+    font-family: var(--ms-data-font);
+    font-size: 0.7rem;
+    letter-spacing: var(--ms-track-label);
+    text-transform: uppercase;
+    color: var(--c-accent);
+    font-weight: 500;
+}
+
+.ms-soldier__meta {
+    font-family: var(--ms-data-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+}
+
+.assignment {
+    border-left: var(--ms-bar-width) solid var(--c-accent);
+    background-color: var(--c-elevation-1);
+    border-top: var(--ms-hairline) solid var(--c-border);
+    border-right: var(--ms-hairline) solid var(--c-border);
+    border-bottom: var(--ms-hairline) solid var(--c-border);
+}

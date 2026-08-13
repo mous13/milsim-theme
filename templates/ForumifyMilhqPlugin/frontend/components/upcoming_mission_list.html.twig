@@ -1,0 +1,15 @@
+{% extends '@!ForumifyMilhqPlugin/frontend/components/upcoming_mission_list.html.twig' %}
+
+{% block list %}
+    <ul>
+        {% for mission in this.result.rows %}
+            <li class="topic-row ms-mission-row">
+                <a class="topic-link" href="{{ path('milhq_missions_view', { id: mission.id }) }}"></a>
+                <span class="ms-mission-row__title">{{ mission.operation.title }}: {{ mission.title }}</span>
+                <span class="ms-mission-row__date">{{ mission.start|format_date(true) }}</span>
+            </li>
+        {% else %}
+            <li class="text-center p-4">{{ 'milhq.opcenter.no_upcoming_missions'|trans }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

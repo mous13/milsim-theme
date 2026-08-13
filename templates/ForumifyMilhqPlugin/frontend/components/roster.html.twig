@@ -1,0 +1,57 @@
+{% extends '@!ForumifyMilhqPlugin/frontend/components/roster.html.twig' %}
+
+{% block roster_unit_users %}
+    <div class="card-body ms-roster">
+        <div class="ms-table-scroll">
+            <table class="ms-roster__table">
+                <caption class="ms-roster__caption">{{ unit.name }}</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="ms-roster__col-insignia"><span class="ms-visually-hidden">{{ 'milhq.admin.rank.crud.single'|trans }}</span></th>
+                        <th scope="col">{{ 'milhq.admin.soldier.crud.single'|trans }}</th>
+                        <th scope="col" class="hide-phone">{{ 'milhq.admin.rank.crud.single'|trans }}</th>
+                        <th scope="col" class="hide-phone">{{ 'milhq.admin.position.crud.single'|trans }}</th>
+                        <th scope="col" class="ms-roster__col-status">{{ 'milhq.admin.status.crud.single'|trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        {% set isSupervisor = unit.markSupervisorsOnRoster and user.position is not null and milhq_unit_is_supervisor(unit, user.position) %}
+                        <tr class="ms-roster__row{% if isSupervisor %} ms-roster__row--supervisor{% endif %}">
+                            <td class="ms-roster__insignia">
+                                {% if user.rank is not null and user.rank.image is not null %}
+                                    <img
+                                        width="24"
+                                        height="24"
+                                        src="{{ asset(user.rank.image, 'milhq.asset')|imagine_filter('avatar_xs') }}"
+                                        alt="{{ user.rank.name }}"
+                                    >
+                                {% endif %}
+                            </td>
+                            <td class="ms-roster__name">
+                                <a href="{{ path('milhq_soldier', { id: user.id }) }}">
+                                    {% if isSupervisor %}<i class="ph-fill ph-star ms-roster__supervisor" aria-hidden="true"></i>{% endif %}
+                                    {{ user.name }}
+                                    {% if isSupervisor %}<span class="ms-visually-hidden">(supervisor)</span>{% endif %}
+                                </a>
+                            </td>
+                            <td class="ms-roster__rank hide-phone">
+                                {% if user.rank is not null %}{{ user.rank.name }}{% else %}&mdash;{% endif %}
+                            </td>
+                            <td class="ms-roster__assignment hide-phone">
+                                {% if user.position is not null %}{{ user.position.name }}{% else %}&mdash;{% endif %}
+                            </td>
+                            <td class="ms-roster__status">
+                                {% if user.status is not null %}
+                                    {% include '@ForumifyMilhqPlugin/frontend/roster/components/status.html.twig' with {
+                                        status: user.status
+                                    } only %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

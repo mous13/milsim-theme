@@ -1,0 +1,43 @@
+.award,
+.rank,
+.qualification {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-radius: 0;
+}
+
+.award img,
+.rank img,
+.qualification img {
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.ms-insignia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-4);
+}
+
+.ms-insignia-card {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-top: var(--ms-rule-weight) solid var(--c-accent);
+    padding: var(--spacing-4);
+    text-align: center;
+}
+
+.ms-insignia-card__name {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-3);
+}
+
+.ms-insignia-card__criteria {
+    font-size: 0.8125rem;
+    color: var(--c-text-secondary);
+    margin-top: var(--spacing-2);
+}

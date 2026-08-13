@@ -1,0 +1,54 @@
+.enlist,
+.ms-enlist {
+    background-color: var(--c-elevation-1);
+    border: var(--ms-hairline) solid var(--c-border);
+    border-top: var(--ms-rule-weight) solid var(--c-call-to-action);
+    padding: var(--spacing-6);
+}
+
+.ms-enlist__title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 1.75rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.ms-enlist__body {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 65ch;
+    color: var(--c-text-primary);
+}
+
+.ms-enlist .btn-cta,
+.ms-enlist__cta {
+    margin-top: var(--spacing-6);
+}
+
+.ms-cta-banner {
+    background-color: var(--c-header-bg);
+    border-left: var(--ms-bar-width) solid var(--c-call-to-action);
+    color: var(--c-primary-text);
+    padding: var(--spacing-8) var(--spacing-6);
+}
+
+.ms-cta-banner__title {
+    font-family: var(--ms-display-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--ms-track-display);
+    font-size: 1.5rem;
+    color: var(--c-primary-text);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.ms-cta-banner__body {
+    color: var(--c-primary-text);
+    opacity: 0.85;
+    max-width: 60ch;
+    margin-top: var(--spacing-2);
+}

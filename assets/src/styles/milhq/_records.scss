@@ -1,0 +1,27 @@
+.record-table td,
+.record-table th {
+    font-family: var(--ms-body-font);
+}
+
+.record-table td:first-child,
+.record-table .record-date {
+    font-family: var(--ms-data-font);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--c-text-secondary);
+    white-space: nowrap;
+}
+
+.record-table img {
+    border-radius: 0;
+}
+
+.ms-record-empty {
+    font-family: var(--ms-data-font);
+    font-size: 0.7rem;
+    letter-spacing: var(--ms-track-label);
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+    padding: var(--spacing-6);
+    text-align: center;
+}
