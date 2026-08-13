@@ -1,0 +1,19 @@
+{
+  "name": "citadel/milsim-theme",
+  "description": "A sleek and modern milsim theme for forumify",
+  "type": "forumify-theme",
+  "keywords": ["symfony-ux"],
+  "authors": [
+    {
+      "name": "Citadel Software Solutions"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Citadel\\MilsimTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "forumify-plugin-class": "Citadel\\MilsimTheme\\CitadelMilsimTheme"
+  }
+}
