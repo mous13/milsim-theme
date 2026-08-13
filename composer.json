@@ -2,12 +2,17 @@
   "name": "citadel/milsim-theme",
   "description": "A sleek and modern milsim theme for forumify",
   "type": "forumify-theme",
+  "license": "proprietary",
   "keywords": ["symfony-ux"],
   "authors": [
     {
       "name": "Citadel Software Solutions"
     }
   ],
+  "require": {
+    "php": ">=8.4",
+    "forumify/forumify-platform": "^1.2"
+  },
   "autoload": {
     "psr-4": {
       "Citadel\\MilsimTheme\\": "src/"
